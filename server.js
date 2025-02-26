@@ -9,7 +9,9 @@ const authRoutes = require('./src/routes/authRoutes');
 const app = express();
 
 // Configuração de CORS
-app.use(cors());
+app.use(cors({
+    origin: 'https://konvictstore.netlify.app/'
+}));
 
 // Middleware para leitura do corpo da requisição
 app.use(express.json());
