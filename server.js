@@ -16,8 +16,6 @@ app.use(cors({
 // Middleware para leitura do corpo da requisição
 app.use(express.json());
 
-// Rotas de pagamento
-
 // Rotas de autenticação
 app.use('/auth', authRoutes);
 

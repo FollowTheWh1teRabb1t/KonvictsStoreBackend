@@ -41,7 +41,7 @@ router.post('/upload-profile-image', authenticateToken, upload.single('profileIm
     }
 
     const userId = req.user.id;
-    const imageUrl = `http://localhost:5001/uploads/${req.file.filename}`;
+    const imageUrl = `${process.env.BACKEND_URL}/uploads/${req.file.filename}`;
 
     try {
         await db('users').where({ id: userId }).update({ profileImage: imageUrl });
